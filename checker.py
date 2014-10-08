@@ -35,7 +35,7 @@ for x in os.walk('.'):
                 commandline = commandline + " 1 2 9 1 0 -5 bubbles trojanman code golf bubbles bubbles"
                 output = subprocess.check_output(commandline, shell=True).rstrip()
             elif currentProblem == 5:
-                commandline = commandline + " racecar racecar"
+                commandline = commandline + " racecar"
                 output = subprocess.check_output(commandline, shell=True).rstrip()
             elif currentProblem == 6:
                 commandline = commandline + " penis snipe"
