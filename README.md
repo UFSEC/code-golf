@@ -16,7 +16,7 @@ _For problems that have input, assume it's from commandline. See [here](http://w
 1. Print 'hello world' without using an 'o' or an 'i' in your source code
 2. Print 'hello world' without using any quotations in your source code
 3. Print the first 12 numbers of the fibonacci sequence, format "number1 number2 number3 ..."
-4. Print the string 'abcdefghijklmnopqrstuvwxyz'
+4. Print the string 'a b c d e f g h i j k l m n o p q r s t u v w x y z'
 5. Given a set of items, print the mode. Assume no ties.
 6. Given two words, print True if they're palindromes, False if they're not.
 7. Given two words, print True if they're anagrams, False if they're not.

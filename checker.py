@@ -2,7 +2,7 @@ import subprocess
 import string
 import os
 
-answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'abcdefghijklmnopqrstuvwxyz', 'bubbles','True', 'True', 'dynamicallyAdded']
+answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'a b c d e f g h i j k l m n o p q r s t u v w x y z', 'bubbles','True', 'True', 'dynamicallyAdded']
 
 bestSolutionChars = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
 bestSolutionUser = ['', '', '', '', '', '', '', '']
