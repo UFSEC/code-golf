@@ -2,10 +2,10 @@ import subprocess
 import string
 import os
 
-answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'abcdefghijklmnopqrstuvwxyz', 'bubbles','True', 'True']
+answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'abcdefghijklmnopqrstuvwxyz', 'bubbles','True', 'True', 'dynamicallyAdded']
 
-bestSolutionChars = [1000, 1000, 1000, 1000, 1000, 1000, 1000]
-bestSolutionUser = ['', '', '', '', '', '', '']
+bestSolutionChars = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+bestSolutionUser = ['', '', '', '', '', '', '', '']
 
 for x in os.walk('.'):
     user = x[0].split('/')
@@ -23,7 +23,7 @@ for x in os.walk('.'):
     print user
 
     currentProblem = 0;
-    maxProblem = 7;
+    maxProblem = len(answers)-1
 
     while(currentProblem <= maxProblem):
         currentfile = user + '/' + str(currentProblem + 1) + '.py'
@@ -39,6 +39,11 @@ for x in os.walk('.'):
                 output = subprocess.check_output(commandline, shell=True).rstrip()
             elif currentProblem == 6:
                 commandline = commandline + " penis snipe"
+                output = subprocess.check_output(commandline, shell=True).rstrip()
+            elif currentProblem == 7:
+                print currentfile
+                with file(currentfile) as f:
+                    answers[7] = f.read()
                 output = subprocess.check_output(commandline, shell=True).rstrip()
             else:
                 output = subprocess.check_output(commandline, shell=True).rstrip()
@@ -67,7 +72,7 @@ for x in os.walk('.'):
                                 char += 1000
                 print char
 
-                if(char > 0 & char < bestSolutionChars[currentProblem]):
+                if(char < bestSolutionChars[currentProblem]):
                     print 'best solution ' + str(bestSolutionChars[currentProblem])
                     bestSolutionChars[currentProblem] = char
                     bestSolutionUser[currentProblem] = user
