@@ -1,11 +1,12 @@
 #Code Golf
 
 ##Rules
-TBD
+1. Make sure your code works before submitting.
+2. Don't try to hack the automated checker.
 
 Make a folder named whatever you want (preferably your name) and put all your solutions in it. This is to avoid merge conflicts and so we know whose work is whose. You may further organize into problem folders.
 
-The files must be called 1.py, 2.py, 3.py for the checker.py to recognize them as submissions
+The files must be called 1.py, 2.py, 3.py, etc. for the checker.py to recognize them as submissions
 
 ##Questions
 1. print 'hello world' without using an 'o' or an 'i' in your source code
