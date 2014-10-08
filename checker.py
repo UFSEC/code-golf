@@ -2,7 +2,7 @@ import subprocess
 import string
 import os
 
-answers = ['test1', 'test2', 'test', 'test', 'test', 'test']
+answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'abcdefghijklmnopqrstuvwxyz', 'test', 'test']
 
 bestSolutionChars = [1000, 1000, 1000, 1000, 1000, 1000]
 bestSolutionUser = ['', '', '', '', '', '']
@@ -26,7 +26,6 @@ for x in os.walk('.'):
     maxProblem = 6;
 
     while(currentProblem <= maxProblem):
-        print 'current problem is ' + str(currentProblem)
         currentfile = user + '/' + str(currentProblem + 1) + '.py'
 
         try:
@@ -39,9 +38,24 @@ for x in os.walk('.'):
                 f = open(currentfile, "r")
                 for line in f:
                     char += len(line)
+
+                    # Don't allow o's or i's
+                    if(currentProblem == 0):
+                        for x in line:
+                            if x == 'o' or x == 'i':
+                                print 'used an o or i'
+                                char += 1000
+
+                    # Don't allow o's or i's
+                    if(currentProblem == 1):
+                        for x in line:
+                            if x == '\"' or x == '\'':
+                                print 'used an \' or \"'
+                                char += 1000
                 print char
 
                 if(char > 0 & char < bestSolutionChars[currentProblem]):
+                    print 'best solution ' + str(bestSolutionChars[currentProblem])
                     bestSolutionChars[currentProblem] = char
                     bestSolutionUser[currentProblem] = user
         except:
