@@ -3,6 +3,7 @@
 ##Rules
 1. Make sure your code works before submitting.
 2. Don't try to hack the automated checker.
+3. Have Fun!
 
 Make a folder named whatever you want (preferably your name) and put all your solutions in it. This is to avoid merge conflicts and so we know whose work is whose. You may further organize into problem folders.
 
