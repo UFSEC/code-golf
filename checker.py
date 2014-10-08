@@ -2,10 +2,10 @@ import subprocess
 import string
 import os
 
-answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'abcdefghijklmnopqrstuvwxyz', 'test', 'test']
+answers = ['hello world', 'hello world', '1 1 2 3 5 8 13 21 34 55 89 144', 'abcdefghijklmnopqrstuvwxyz', 'bubbles','True', 'True']
 
-bestSolutionChars = [1000, 1000, 1000, 1000, 1000, 1000]
-bestSolutionUser = ['', '', '', '', '', '']
+bestSolutionChars = [1000, 1000, 1000, 1000, 1000, 1000, 1000]
+bestSolutionUser = ['', '', '', '', '', '', '']
 
 for x in os.walk('.'):
     user = x[0].split('/')
@@ -23,13 +23,26 @@ for x in os.walk('.'):
     print user
 
     currentProblem = 0;
-    maxProblem = 6;
+    maxProblem = 7;
 
     while(currentProblem <= maxProblem):
         currentfile = user + '/' + str(currentProblem + 1) + '.py'
 
         try:
-            output = subprocess.check_output("python " + currentfile, shell=True).rstrip()
+            commandline = "python "+currentfile
+
+            if currentProblem == 4:
+                commandline = commandline + " 1 2 9 1 0 -5 bubbles trojanman code golf bubbles bubbles"
+                output = subprocess.check_output(commandline, shell=True).rstrip()
+            elif currentProblem == 5:
+                commandline = commandline + " racecar racecar"
+                output = subprocess.check_output(commandline, shell=True).rstrip()
+            elif currentProblem == 6:
+                commandline = commandline + " penis snipe"
+                output = subprocess.check_output(commandline, shell=True).rstrip()
+            else:
+                output = subprocess.check_output(commandline, shell=True).rstrip()
+
             print 'output is: ' + output
             print 'answer is: ' + answers[currentProblem]
             if(output == answers[currentProblem]):
