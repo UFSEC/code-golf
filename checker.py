@@ -71,6 +71,10 @@ for x in os.walk('.'):
                                 char += 1000
                 print char
 
+                if(char == bestSolutionChars[currentProblem]):
+                    print 'tie solution ' + str(bestSolutionChars[currentProblem])
+                    bestSolutionUser[currentProblem] = bestSolutionUser[currentProblem] + ' ' + user
+
                 if(char < bestSolutionChars[currentProblem]):
                     print 'best solution ' + str(bestSolutionChars[currentProblem])
                     bestSolutionChars[currentProblem] = char
