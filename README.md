@@ -20,6 +20,7 @@ _For problems that have input, assume it's from commandline. See [here](http://w
 5. Given a set of items, print the mode. Assume no ties.
 6. Given two words, print True if they're palindromes, False if they're not.
 7. Given two words, print True if they're anagrams, False if they're not.
+8. Have your program print the contents of your program (see quine)
 
 
 <br>
