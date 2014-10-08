@@ -41,7 +41,6 @@ for x in os.walk('.'):
                 commandline = commandline + " penis snipe"
                 output = subprocess.check_output(commandline, shell=True).rstrip()
             elif currentProblem == 7:
-                print currentfile
                 with file(currentfile) as f:
                     answers[7] = f.read()
                 output = subprocess.check_output(commandline, shell=True).rstrip()
