@@ -1,0 +1,1 @@
+print open('3').read()
