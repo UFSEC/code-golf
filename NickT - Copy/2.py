@@ -1,1 +1,0 @@
-print open('2').read()
