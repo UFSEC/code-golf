@@ -1,1 +1,1 @@
-print open('4').read()
+for a in range(97,123):print chr(a),

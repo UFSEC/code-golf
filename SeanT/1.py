@@ -1,1 +1,1 @@
-exec"execf\x69le('2.py')"
+exec'pr\x69nt"hell\x6f w\x6frld"'

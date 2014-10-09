@@ -1,1 +1,2 @@
-print open(dict(a=1).keys()[0]).read()
+a=dict(hello=1,world=0).keys()
+print a[1],a[0]
