@@ -3,8 +3,6 @@ x=sys.argv
 k=''
 s=sorted
 j=k.join
-a=j(s(x[1]))
-b=j(s(x[2]))
 c=False
-if a==b:c=True
+if j(s(x[1]))==j(s(x[2])):c=True
 print c
