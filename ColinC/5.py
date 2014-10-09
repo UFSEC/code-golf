@@ -1,2 +1,3 @@
 from sys import argv as a
-print sorted(a[1:])[len(a)/2]
+from collections import Counter as C
+print C(a[1:]).most_common(1)[0][0]
