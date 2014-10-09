@@ -1,7 +1,10 @@
-import sys as s
-x=s.argv
+import sys
+x=sys.argv
 k=''
-a=k.join(sorted(x[1]))
-b=k.join(sorted(x[2]))
-if a==b:print True
-else:print False
+s=sorted
+j=k.join
+a=j(s(x[1]))
+b=j(s(x[2]))
+c=False
+if a==b:c=True
+print c
