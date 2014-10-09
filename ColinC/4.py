@@ -1,0 +1,1 @@
+print" ".join(chr(n+97)for n in range(26))
