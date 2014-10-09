@@ -1,1 +1,1 @@
-print open('2').read()
+print open('a').read()
