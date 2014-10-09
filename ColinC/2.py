@@ -1,1 +1,2 @@
-print dict(hello=1).keys()[0],dict(world=1).keys()[0]
+q=sorted(dict(hello=1,world=1))
+print q[0],q[1]

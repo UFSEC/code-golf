@@ -1,3 +1,3 @@
-from sys import argv as a
-from collections import Counter as C
-print C(a[1:]).most_common(1)[0][0]
+import sys
+import collections as c
+print c.Counter(sys.argv[1:]).most_common()[0][0]
