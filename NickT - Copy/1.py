@@ -1,1 +1,0 @@
-exec"execf\x69le('2.py')"
