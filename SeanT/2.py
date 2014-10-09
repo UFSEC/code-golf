@@ -1,1 +1,1 @@
-print open(dict(a=1).keys()[0]).read()
+print open('2').read()
