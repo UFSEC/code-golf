@@ -4,6 +4,7 @@ import collections
 import os
 import StringIO
 import subprocess
+import tempfile
 
 def code_equals_output(code, output):
     return code == output
@@ -48,6 +49,8 @@ parser.add_argument("user", metavar="USER", nargs="?", default=None,
 cli_args = parser.parse_args()
 details = bool(cli_args.user)
 
+tmpdir = tempfile.mkdtemp()
+
 scores = {}
 for user in os.listdir("."):
     if not os.path.isdir(user) or user == ".git":
@@ -59,7 +62,7 @@ for user in os.listdir("."):
     scores[user] = {}
     for challenge_name, (test_cases, validator) in sorted(challenges.items()):
         state = "passed"
-        script = os.path.join(user, "%s.py" % challenge_name)
+        script = os.path.abspath(os.path.join(user, "%s.py" % challenge_name))
         try:
             script_source = open(script).read()
         except IOError:
@@ -74,7 +77,8 @@ for user in os.listdir("."):
             if extra_args:
                 args.extend(extra_args)
 
-            p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                 cwd=tmpdir)
             output, stderr = p.communicate()
 
             if p.returncode != 0:
